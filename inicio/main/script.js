@@ -7,3 +7,14 @@ function mostrarContenido(seccion) {
 
     document.getElementById('contenido').innerHTML = `<p>${contenido[seccion]}</p>`;
 }
+
+// Redirigir a la página del ciclo de vida cuando se hace clic en el botón correspondiente
+document.addEventListener("DOMContentLoaded", function () {
+    const cicloBtn = document.getElementById("btnCiclo");
+
+    if (cicloBtn) {
+        cicloBtn.addEventListener("click", function () {
+            window.location.href = "../ciclo/ciclo.html";
+        });
+    }
+});
