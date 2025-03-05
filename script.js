@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (cicloBtn) {
         cicloBtn.addEventListener("click", function () {
-            window.location.href = "../ciclo/ciclo.html";
+            window.location.href = "ciclo/ciclo.html";
         });
     }
 });
