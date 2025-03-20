@@ -8,19 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <button class="back-btn" onclick="goBack()">← Volver al inicio</button>
+        <div class="header">
+            <div class="header-left">
+                <button class="back-btn" onclick="goBack()">← Volver al inicio</button>
+            </div>
+        </div>
         <h1>Diagramas UML</h1>
 
         <div class="diagramas">
-            <div class="diagramas">
-                <div>
-                    <div class="label">Diagrama de Clases</div>
-                    <img src="../fotos/ModeloClases.png"  alt="Diagrama de Clases" onclick="openFullscreen(this)">
-                </div>
-                <div>
-                    <div class="label">Modelo Entidad Relación</div>
-                    <img src="../fotos/MER.png" alt="Modelo Entidad Relación" onclick="openFullscreen(this)">
-                </div>
+            <div>
+                <div class="label">Diagrama de Clases</div>
+                <img src="../fotos/ModeloClases.png" alt="Diagrama de Clases" onclick="openFullscreen(this)">
+            </div>
+            <div>
+                <div class="label">Modelo Entidad Relación</div>
+                <img src="../fotos/MER.png" alt="Modelo Entidad Relación" onclick="openFullscreen(this)">
             </div>
         </div>
     </div>

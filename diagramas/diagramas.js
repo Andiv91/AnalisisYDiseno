@@ -1,34 +1,41 @@
-// Función para regresar a la página principal
+// Función para volver a la página anterior
 function goBack() {
-    window.location.href = "../index.html";
+    window.location.href = "../index.html"; // Ajusta la ruta si es necesario
 }
 
 // Función para abrir imagen en pantalla completa
 function openFullscreen(img) {
-    const modal = document.createElement("div");
-    modal.style.position = "fixed";
-    modal.style.top = "0";
-    modal.style.left = "0";
-    modal.style.width = "100%";
-    modal.style.height = "100%";
-    modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-    modal.style.display = "flex";
-    modal.style.justifyContent = "center";
-    modal.style.alignItems = "center";
-    modal.style.zIndex = "1000";
-
-    const fullImg = document.createElement("img");
+    // Crear el modal
+    const modal = document.createElement('div');
+    modal.className = 'fullscreen-modal';
+    
+    // Crear la imagen ampliada
+    const fullImg = document.createElement('img');
     fullImg.src = img.src;
-    fullImg.style.maxWidth = "90%";
-    fullImg.style.maxHeight = "90%";
-    fullImg.style.boxShadow = "0 4px 8px rgba(255, 255, 255, 0.2)";
-    fullImg.style.borderRadius = "10px";
-
+    fullImg.alt = img.alt;
+    
+    // Agregar la imagen al modal
     modal.appendChild(fullImg);
+    
+    // Agregar el modal al body
     document.body.appendChild(modal);
-
-    // Cerrar modal al hacer clic
-    modal.onclick = function () {
+    
+    // Prevenir scroll del body
+    document.body.style.overflow = 'hidden';
+    
+    // Añadir evento de cierre
+    modal.addEventListener('click', function() {
         document.body.removeChild(modal);
-    };
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Permitir cerrar con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (document.querySelector('.fullscreen-modal')) {
+                document.body.removeChild(modal);
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
 }
